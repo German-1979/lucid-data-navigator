@@ -26,8 +26,8 @@ interface SidebarLinkProps {
 const SidebarLink = ({ icon, label, active, onClick }: SidebarLinkProps) => (
   <Button
     variant="ghost"
-    className={`w-full justify-start ${
-      active ? "bg-sidebar-accent text-sidebar-accent-foreground" : ""
+    className={`w-full justify-start text-white ${
+      active ? "bg-sidebar-accent text-white" : "text-white/70 hover:text-white"
     }`}
     onClick={onClick}
   >
@@ -43,26 +43,26 @@ interface SidebarProps {
 
 const Sidebar = ({ activePage, setActivePage }: SidebarProps) => {
   const mainNavItems = [
-    { icon: <Home size={18} />, label: "Dashboard", id: "dashboard" },
-    { icon: <Database size={18} />, label: "Data Sources", id: "datasources" },
-    { icon: <BarChart4 size={18} />, label: "Visualizations", id: "visualizations" },
-    { icon: <FileText size={18} />, label: "Analysis", id: "analysis" },
-    { icon: <BrainCircuit size={18} />, label: "Machine Learning", id: "ml" },
-    { icon: <MessageSquare size={18} />, label: "AI Assistant", id: "assistant" },
+    { icon: <Home size={18} className="text-white" />, label: "Dashboard", id: "dashboard" },
+    { icon: <Database size={18} className="text-white" />, label: "Data Sources", id: "datasources" },
+    { icon: <BarChart4 size={18} className="text-white" />, label: "Visualizations", id: "visualizations" },
+    { icon: <FileText size={18} className="text-white" />, label: "Analysis", id: "analysis" },
+    { icon: <BrainCircuit size={18} className="text-white" />, label: "Machine Learning", id: "ml" },
+    { icon: <MessageSquare size={18} className="text-white" />, label: "AI Assistant", id: "assistant" },
   ];
 
   const quickActions = [
-    { icon: <FilePlus size={18} />, label: "Upload File", id: "upload" },
-    { icon: <FileSpreadsheet size={18} />, label: "New Connection", id: "connection" },
+    { icon: <FilePlus size={18} className="text-white" />, label: "Upload File", id: "upload" },
+    { icon: <FileSpreadsheet size={18} className="text-white" />, label: "New Connection", id: "connection" },
   ];
 
   return (
     <div className="h-screen flex flex-col bg-sidebar py-4 w-64 border-r">
       <div className="px-4 py-2">
-        <h1 className="text-2xl font-bold text-sidebar-foreground flex items-center">
-          <Database className="mr-2" /> DataNav
+        <h1 className="text-2xl font-bold text-white flex items-center">
+          <Database className="mr-2 text-white" /> DataNav
         </h1>
-        <p className="text-sm text-sidebar-foreground opacity-75">
+        <p className="text-sm text-white/75">
           Your Data Navigator
         </p>
       </div>
@@ -84,7 +84,7 @@ const Sidebar = ({ activePage, setActivePage }: SidebarProps) => {
 
         <Separator className="my-4 bg-sidebar-border" />
 
-        <h3 className="text-sm font-medium text-sidebar-foreground px-4 py-2">
+        <h3 className="text-sm font-medium text-white/75 px-4 py-2">
           Quick Actions
         </h3>
         <div className="space-y-1">
@@ -101,8 +101,8 @@ const Sidebar = ({ activePage, setActivePage }: SidebarProps) => {
       </ScrollArea>
 
       <div className="px-3 py-2 mt-auto">
-        <SidebarLink icon={<Settings size={18} />} label="Settings" onClick={() => setActivePage("settings")} />
-        <SidebarLink icon={<HelpCircle size={18} />} label="Help & Support" onClick={() => setActivePage("help")} />
+        <SidebarLink icon={<Settings size={18} className="text-white" />} label="Settings" onClick={() => setActivePage("settings")} />
+        <SidebarLink icon={<HelpCircle size={18} className="text-white" />} label="Help & Support" onClick={() => setActivePage("help")} />
       </div>
     </div>
   );
