@@ -27,7 +27,9 @@ const SidebarLink = ({ icon, label, active, onClick }: SidebarLinkProps) => (
   <Button
     variant="ghost"
     className={`w-full justify-start text-white ${
-      active ? "bg-sidebar-accent text-white" : "text-white/70 hover:text-white"
+      active 
+        ? "bg-sidebar-accent text-white" 
+        : "hover:bg-sidebar-accent/50 text-white/70 hover:text-white"
     }`}
     onClick={onClick}
   >
